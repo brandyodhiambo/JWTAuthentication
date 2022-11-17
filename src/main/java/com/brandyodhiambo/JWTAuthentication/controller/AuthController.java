@@ -14,11 +14,7 @@ import org.springframework.security.authentication.UsernamePasswordAuthenticatio
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.password.PasswordEncoder;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import com.brandyodhiambo.JWTAuthentication.model.ERole;
 import com.brandyodhiambo.JWTAuthentication.model.Role;
@@ -34,7 +30,7 @@ import com.brandyodhiambo.JWTAuthentication.security.service.UserDetailsImpl;
 
 @CrossOrigin(origins = "*", maxAge = 3600)
 @RestController
-@RequestMapping("/api/auth")
+@RequestMapping(path="/api/auth")
 public class AuthController {
     @Autowired
     AuthenticationManager authenticationManager;
@@ -125,5 +121,10 @@ public class AuthController {
         userRepository.save(user);
 
         return ResponseEntity.ok(new MessageResponse("User registered successfully!"));
+    }
+
+    @RequestMapping("/hello")
+    public String helloWorld(@RequestParam(value="name", defaultValue="World") String name) {
+        return "Hello "+name+"!!";
     }
 }
