@@ -34,29 +34,11 @@ Here is the spring boot server diagram how the process flows.
 ### Demo
 Postman test for Sign up
 
-<img src="screenshot/register-user.PNG" width="1000"/>
+<img src="screenshot/register-user.PNG" width="500"/>
 
 Postman test for Sign in
 
-<img src="screenshot/login_user.PNG" width="1000"/>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+<img src="screenshot/login_user.PNG" width="500"/>
 
 
 
