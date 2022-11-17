@@ -22,6 +22,7 @@ This application runs on `MySQL` database and the `RESTApi` are tested on postma
 
 ### Spring Security
 Here is the spring boot server diagram how the process flows.
+
 <img src="screenshot/spring_server.PNG" width="500"/>
 
 ### Technology Used
