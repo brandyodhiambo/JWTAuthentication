@@ -1,11 +1,13 @@
 package com.brandyodhiambo.JWTAuthentication.payload.request;
 
-import java.util.List;
+
+import javax.validation.constraints.*;
 import java.util.Set;
 
 public class SignupRequest {
     private String username;
     private String email;
+
     private String password;
     private Set<String> role;
 

@@ -8,6 +8,7 @@ import java.util.stream.Collectors;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -28,7 +29,7 @@ import com.brandyodhiambo.JWTAuthentication.repository.UserRepository;
 import com.brandyodhiambo.JWTAuthentication.security.jwt.JwtUtils;
 import com.brandyodhiambo.JWTAuthentication.security.service.UserDetailsImpl;
 
-@CrossOrigin(origins = "*", maxAge = 3600)
+@CrossOrigin(origins = "*")
 @RestController
 @RequestMapping(path="/api/auth")
 public class AuthController {
@@ -120,7 +121,8 @@ public class AuthController {
         user.setRole(roles);
         userRepository.save(user);
 
-        return ResponseEntity.ok(new MessageResponse("User registered successfully!"));
+       // return ResponseEntity.ok(new MessageResponse("User registered successfully!"));
+        return new ResponseEntity<>("User registered Successfully!", HttpStatus.OK);
     }
 
     @RequestMapping("/hello")
